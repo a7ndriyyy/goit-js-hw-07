@@ -12,5 +12,22 @@ function onClickGallery(evt) {
  if (evt.target.node.Name !== "IMG"){
      return ;
  }
- openBigImages(evt.target.dataset.source)
+ openFullImages(evt.target.dataset.source);
+}
+
+function galleryElCreateMarkup(galleryItems){
+    return galleryItems
+    .map(({ preview,original,description}) => {
+       return `<li class = "gallery-li">
+              <a class ="gallery-link",
+              <img
+              class ="gallery-img"
+              src="${preview}"
+              data-source="${original}"
+              alt="${description}"
+              />
+              </a>
+       </li>`;
+    })
+    .join("");
 }
