@@ -31,3 +31,7 @@ function galleryElCreateMarkup(galleryItems){
     })
     .join("");
 }
+
+function setGalleryHtml(place, gallery){
+    galleryList.insertAdjacentElement(place,gallery);
+}
