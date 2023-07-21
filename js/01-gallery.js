@@ -35,3 +35,10 @@ function galleryElCreateMarkup(galleryItems){
 function setGalleryHtml(place, gallery){
     galleryList.insertAdjacentElement(place,gallery);
 }
+
+function openFullImages(target){
+    const instance  = basicLightbox.create(`
+    <img src="${target}"  width="800" height="600"> 
+    `);
+    instance.show();
+}
