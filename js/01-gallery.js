@@ -41,4 +41,5 @@ function openFullImages(target){
     <img src="${target}"  width="800" height="600"> 
     `);
     instance.show();
+    console.dir(instance);
 }
