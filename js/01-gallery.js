@@ -5,7 +5,7 @@ console.log(galleryItems);
 
 const galleryList = document.querySelector(".gallery");
 galleryList.addEventListener("click",onClickGallery);
-setGallerryHtml("beforeend", galleryElCreateMarkup(galleryItems));
+setGalleryHtml("beforeend", galleryElCreateMarkup(galleryItems));
 
 function onClickGallery(evt) {
  evt.preventDefault();
