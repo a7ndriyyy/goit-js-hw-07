@@ -9,7 +9,7 @@ setGalleryHtml("beforeend", galleryElCreateMarkup(galleryItems));
 
 function onClickGallery(evt) {
  evt.preventDefault();
- if (evt.target.node.Name !== "IMG"){
+ if (evt.target.nodeName !== "IMG"){
      return ;
  }
  openFullImages(evt.target.dataset.source);
@@ -18,10 +18,10 @@ function onClickGallery(evt) {
 function galleryElCreateMarkup(galleryItems){
     return galleryItems
     .map(({ preview,original,description}) => {
-       return `<li class = "gallery-li">
-              <a class ="gallery-link",
+       return `<li class = "gallery__item">
+              <a class ="gallery__link",
               <img
-              class ="gallery-img"
+              class ="gallery__image"
               src="${preview}"
               data-source="${original}"
               alt="${description}"
@@ -33,7 +33,7 @@ function galleryElCreateMarkup(galleryItems){
 }
 
 function setGalleryHtml(place, gallery){
-    galleryList.insertAdjacentElement(place,gallery);
+    galleryList.insertAdjacentHTML(place, gallery);
 }
 
 function openFullImages(target){
@@ -42,4 +42,10 @@ function openFullImages(target){
     `);
     instance.show();
     console.dir(instance);
+    galleryList.addEventListener("keydown", (evt) => {
+        if (evt.code === "Escape") {
+          instance.close();
+        }
+      });
 }
+console.log(galleryItems);
