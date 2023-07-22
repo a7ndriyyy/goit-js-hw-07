@@ -10,7 +10,7 @@ function galleryElCreateMarkup(galleryItems){
     return galleryItems
     .map(({ preview,original,description}) => {
        return `<li class = "gallery__item">
-              <a class ="gallery__link"></a>,
+              <a class ="gallery__link">,
               <img
               class ="gallery__image"
               src="${preview}"
