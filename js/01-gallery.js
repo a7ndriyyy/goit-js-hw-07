@@ -37,9 +37,12 @@ function setGalleryHtml(place, gallery){
 }
 
 function openFullImages(target){
-    const instance  = basicLightbox.create(`
-    <img src="${target}"  width="800" height="600"> 
-    `);
+    const instance  = basicLightbox.create(`<img src="${target}"  width="800" height="600">`,{
+        onShow:(instance) =>
+        console.log(`onShow`, instance),
+        onClose:(instance) =>
+        console.log(`onClose`,instance)
+    });
     instance.show();
     console.dir(instance);
     galleryList.addEventListener("keydown", (evt) => {
@@ -49,3 +52,8 @@ function openFullImages(target){
       });
 }
 console.log(galleryItems);
+
+/* <img src="${target}"  width="800" height="600"> 
+`);
+instance.show();
+console.dir(instance); */
