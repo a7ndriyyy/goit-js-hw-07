@@ -39,21 +39,17 @@ function setGalleryHtml(place, gallery){
 function openFullImages(target){
     const instance  = basicLightbox.create(`<img src="${target}"  width="800" height="600">`,{
         onShow:(instance) =>
-        console.log(`onShow`, instance),
+        console.log(`keydown`,onCloseEscape),
         onClose:(instance) =>
-        console.log(`onClose`,instance)
+        console.log(`keydown`,onCloseEscape)
     });
     instance.show();
     console.dir(instance);
-    galleryList.addEventListener("keydown", (evt) => {
+   function onCloseEscape((evt) => {
         if (evt.code === "Escape") {
-          instance.close();
+        instance.close();
         }
-      });
+        });
+    
 }
 console.log(galleryItems);
-
-/* <img src="${target}"  width="800" height="600"> 
-`);
-instance.show();
-console.dir(instance); */
