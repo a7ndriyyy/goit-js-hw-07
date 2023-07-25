@@ -45,11 +45,11 @@ function openFullImages(target){
     });
     instance.show();
     console.dir(instance);
-   function onCloseEscape((evt) => {
+   function onCloseEscape(evt) {
         if (evt.code === "Escape") {
         instance.close();
         }
-        });
+        };
     
 }
 console.log(galleryItems);
